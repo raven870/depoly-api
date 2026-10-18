@@ -39,6 +39,18 @@ func main() {
 		})
 	})
 
+	app.Get("/user", func(c fiber.Ctx) error {
+
+		return c.Status(fiber.StatusOK).JSON(fiber.Map{
+			"success": true,
+			"data": fiber.Map{
+				"username": "gautam",
+				"password": "123456",
+				"address":  "jnk-04",
+			},
+		})
+	})
+
 	err := app.Listen(":" + Port)
 	if err != nil {
 		slog.Debug("Error while starting server ->", "ErrorMsz", err.Error())
