@@ -2,6 +2,7 @@ package config
 
 import (
 	"log"
+	"log/slog"
 
 	"github.com/caarlos0/env/v11"
 	"github.com/joho/godotenv"
@@ -17,7 +18,7 @@ func ConfigureEnv() *Config {
 
 	error := godotenv.Load()
 	if error != nil {
-		log.Fatal("Error While loading .env file", error.Error())
+		slog.Info("Error loading .env file", "message:", error.Error())
 	}
 
 	var config Config
