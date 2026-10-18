@@ -40,7 +40,7 @@ func main() {
 	})
 
 	app.Get("/user", func(c fiber.Ctx) error {
-
+		slog.Info("GET","/user")
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"success": true,
 			"data": fiber.Map{
