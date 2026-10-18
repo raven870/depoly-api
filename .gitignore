@@ -28,3 +28,4 @@ go.work.sum
 # IDE / Editor files
 .vscode/
 .idea/
+*.iml
